@@ -7,7 +7,66 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <SplitView x:Name="MainSplitView"  CompactPaneLength="50" OpenPaneLength="150">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="MainWindowState">
+                <VisualState x:Name="narrowState" >
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MainSplitView.DisplayMode" Value="Overlay"/>
+                        <Setter Target="MainSplitView.IsPaneOpen" Value="False"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="mediumState" >
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="700"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MainSplitView.DisplayMode" Value="CompactOverlay"/>
+                        <Setter Target="MainSplitView.IsPaneOpen" Value="False"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="largeState" >
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1000"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MainSplitView.DisplayMode" Value="Inline"/>
+                        <Setter Target="MainSplitView.IsPaneOpen" Value="True"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
 
-    </Grid>
+
+
+
+        <SplitView.Pane>
+            <StackPanel Background="Gray">
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="MenuButton1" FontFamily="Segoe MDL2 Assets" Content="&#xE825;"
+                    Width="50" Height="50" Background="Transparent"/>
+                    <TextBlock Text="Button 1" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="MenuButton2" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;"
+                        Width="50" Height="50" Background="Transparent"/>
+                    <TextBlock Text="Button 2" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="MenuButton3" FontFamily="Segoe MDL2 Assets" Content="&#xE1D6;"
+                        Width="50" Height="50" Background="Transparent"/>
+                    <TextBlock Text="Button 3" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+            </StackPanel>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <Grid>
+                <TextBlock Text="SplitView Basic" FontSize="54" Foreground="White"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+        </SplitView.Content>
+    </SplitView>
 </Page>
