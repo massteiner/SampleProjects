@@ -57,13 +57,13 @@
                 <StackPanel Background="Gray">
                     <StackPanel Orientation="Horizontal">
                         <Button x:Name="MenuButton1" FontFamily="Segoe MDL2 Assets" Content="&#xE825;"
-                    Width="50" Height="50" Background="Transparent"/>
-                        <TextBlock Text="Button 1" FontSize="18" VerticalAlignment="Center" />
+                    Width="50" Height="50" Background="Transparent" Click="ButtonBase_OnClick"/>
+                        <TextBlock Text="Show message box" FontSize="18" VerticalAlignment="Center" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Button x:Name="MenuButton2" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;"
-                        Width="50" Height="50" Background="Transparent"/>
-                        <TextBlock Text="Button 2" FontSize="18" VerticalAlignment="Center" />
+                        Width="50" Height="50" Background="Transparent" Click="ButtonChangeColore_OnClick"/>
+                        <TextBlock Text="Change color" FontSize="18" VerticalAlignment="Center" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Button x:Name="MenuButton3" FontFamily="Segoe MDL2 Assets" Content="&#xE1D6;"
@@ -73,7 +73,7 @@
                 </StackPanel>
             </SplitView.Pane>
             <SplitView.Content>
-                <Grid>
+                <Grid x:Name="scvMain" Background="BlanchedAlmond">
                     <TextBlock Text="SplitView Basic" FontSize="54" Foreground="White"
                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
