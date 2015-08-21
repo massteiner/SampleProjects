@@ -26,5 +26,17 @@ namespace UniversalTestApp
         {
             this.InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (MainSplitView.DisplayMode == SplitViewDisplayMode.CompactOverlay)
+            {
+                MainSplitView.DisplayMode = SplitViewDisplayMode.Inline;
+            }
+            else
+            {
+                MainSplitView.DisplayMode = SplitViewDisplayMode.CompactOverlay;
+            }
+        }
     }
 }
