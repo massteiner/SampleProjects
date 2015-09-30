@@ -15,7 +15,7 @@ public class Program
         else if (args.Length == 1 && args[0] == "mac")
         {
             DrawMac();
-        //  }
+        }
         //  else if (args.Length == 1 && args[0] == "bbv")
         //  {
         //      DrawBbv();
