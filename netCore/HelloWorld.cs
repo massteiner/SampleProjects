@@ -16,10 +16,10 @@ public class Program
         {
             DrawMac();
         }
-        //  else if (args.Length == 1 && args[0] == "bbv")
-        //  {
-        //      DrawBbv();
-        //  }
+        else if (args.Length == 1 && args[0] == "bbv")
+        {
+            DrawBbv();
+        }
         else
         {
             DrawWindows();
